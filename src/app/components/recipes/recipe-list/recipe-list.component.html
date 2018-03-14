@@ -5,20 +5,10 @@
 </div><br/>
 <div class="form-row">
   <div class="col-12">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start clearfix"
-       *ngFor="let receta of recipes">
-      <div class="float-left">
-        <h4 class="mb-1">
-          {{receta.name}}
-        </h4>
-        <p class="mb-1">{{receta.description}}</p>
-      </div>
-      <div class="float-right">
-        <img src="{{receta.imagePath}}" alt="{{receta.name}}" class="img-responsive"
-             style="max-height: 50px;">
-      </div>
-    </a>
     <br/>
-    <app-recipe-item></app-recipe-item>
+    <app-recipe-item
+        *ngFor="let recetaElemento of recipes"
+        [receta]="recetaElemento" 
+        ></app-recipe-item>
   </div>
 </div>
