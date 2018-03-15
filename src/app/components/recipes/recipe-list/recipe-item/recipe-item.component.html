@@ -1,6 +1,8 @@
-<a href="#"
+<a
+  style="cursor:pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
   class="list-group-item list-group-item-action flex-column align-items-start clearfix"
-  (click)="onSelected()"
   >
   <div class="float-left">
     <h4 class="list-group-item-heading">  {{receta.name}}  </h4>
