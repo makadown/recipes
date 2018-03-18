@@ -30,7 +30,16 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit()  {
-    console.log(this.recipeForm);
+
+    if(this.editMode)
+    {
+          this.recipeService.updateRecipe(this.id, this.recipeForm.value );
+          //el puro value del formulario basta para ser usado como entidad a pasar al servicio!
+          // orale carnal!
+    }
+    else{
+          this.recipeService.addRecipe( this.recipeForm.value  );
+    }
   }
 
   onAddIngredient(){
