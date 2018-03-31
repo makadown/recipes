@@ -1,0 +1,9 @@
+<footer class="container">
+		<hr />
+    <p *ngIf="authService.isAuthenticated()" >
+        <span class="glyphicon glyphicon-log-out"></span>
+				<a (click)="onLogout()" style="cursor:pointer;"><b>Logout</b></a>
+    </p>
+		<p><img src="assets/img/angularlogo.png" alt=""> Copyright &copy; Makadown 2018</p>
+		<p>Proyecto desarrollado en Atom IDE + varios plugins.</p>
+</footer>
