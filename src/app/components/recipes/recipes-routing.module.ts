@@ -8,7 +8,9 @@ import { AuthGuardService } from '../../services/auth-guard.service';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 const recipesRoutes: Routes = [
-  { path: 'recipes', component: RecipesComponent, children: [
+  // Antes de lazy loading cargaba directamente en path el recipes, despues ya no
+//{ path: 'recipes', component: RecipesComponent, children: [
+  { path: '', component: RecipesComponent, children: [
           { path : '', component: RecipeStartComponent    },
           { path : 'new', component: RecipeEditComponent, canActivate:[AuthGuardService] }, //tiene que ir primero
           { path : ':id', component: RecipeDetailComponent }, //si se pone primero que new, tronará
@@ -19,6 +21,6 @@ const recipesRoutes: Routes = [
 @NgModule({
   imports: [ RouterModule.forChild(recipesRoutes) ],
   exports: [ RouterModule ],
-  providers: []
+  providers: [ AuthGuardService ]  //Este servicio se usa unicamente en el routing y no el module de recipes, por eso se queda aquí
 })
 export class RecipesRoutingModule { }
