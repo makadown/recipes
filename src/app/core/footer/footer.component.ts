@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class FooterComponent {
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   onLogout(){ this.authService.logout();}
 

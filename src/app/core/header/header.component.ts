@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class HeaderComponent{
   //subscription = new Subscription();
   constructor(private dataStorageService: DataStorageService ,
-              private authService: AuthService){
+              public authService: AuthService){
 
   }
 
@@ -31,6 +31,6 @@ export class HeaderComponent{
    this.dataStorageService.getRecipes();
  }
 
- onLogout(){ this.authService.logout();} 
+ onLogout(){ this.authService.logout();}
 
 }
