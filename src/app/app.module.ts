@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule} from './app-routing.module';
@@ -9,13 +9,13 @@ import { ShoppingListModule } from './components/shopping-list/shopping-list.mod
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 
-@NgModule({ 
+@NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     SharedModule,
     ShoppingListModule,
