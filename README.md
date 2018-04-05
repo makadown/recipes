@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Instructions 
 
-This app consists in check recipes and modify an ingredient list. <br/>In order to create or modify any recipe you must register and login. <br/><br/>The default login is  mayito@mayito.com   with pass:  mayito<br/><br/>
+This app consists in check recipes and modify an ingredient list. <br/>In order to create or modify any recipe you must register / login. <br/><br/>The default login is  mayito@mayito.com   with pass:  mayito<br/><br/>
 Use Manage > Fetch Data to obtain recipes from firebase.<br/>
 Use Manage > Save Data to save all recipes created/modified.<br/><br/>
 
