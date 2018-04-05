@@ -1,7 +1,7 @@
 # RecipesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
-This app consists in check recipes and modify an ingredient list. In order to create or modify any recipe you must register and login. The default login is  mayito@mayito.com   with pass:  mayito
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7. <br/>
+This app consists in check recipes and modify an ingredient list. <br/>In order to create or modify any recipe you must register and login. <br/><br/>The default login is  mayito@mayito.com   with pass:  mayito<br/>
 
 Published version https://makadown.github.io/recipes-app
 
