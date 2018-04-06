@@ -20,7 +20,7 @@ export class HeaderComponent{
     //subscription =
     this.dataStorageService.storeRecipes()
     .subscribe(
-      (response:Response)=>{
+      (response )=>{
           console.log(response);
       }
     );

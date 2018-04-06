@@ -3,7 +3,7 @@ import { RecipeService } from '../services/recipe.service';
 import { Recipe } from '../models/recipe.model';
 import 'rxjs/add/operator/map'
 import { AuthService } from './auth.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams,HttpRequest } from '@angular/common/http';
 
 @Injectable()
 export class DataStorageService {
@@ -15,22 +15,34 @@ export class DataStorageService {
 
   }
 
-  storeRecipes(){
-    const token =  this.authService.getToken();
+  storeRecipes(){ 
 
-    return  this.httpClient.put('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json?auth='+token,
-                    this.recipeService.getRecipes());
+    //return  this.httpClient.put('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json?auth='+token,
+
+    /*return  this.httpClient.put('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json',
+            this.recipeService.getRecipes(),{
+                observe:  'body',
+                params: parametros
+            });*/
+
+        const req = new HttpRequest('PUT', 'https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json',
+                this.recipeService.getRecipes(),{
+                    reportProgress:true
+                })
+         return this.httpClient.request(req);
   }
 
   getRecipes(){
 
-    const token =  this.authService.getToken();
-
      //console.log('Fetching data with: '+token);
-    this.httpClient.get<Recipe[]>('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json?auth='+token)
+    //this.httpClient.get<Recipe[]>('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json?auth='+token)
+    this.httpClient.get<Recipe[]>('https://ng-recipe-book-9ff2a.firebaseio.com/recipes.json' , {
+        observe : 'body',
+        responseType : 'json'
+    })
     .map(
         (recipes)=>{
-          //const recipes:Recipe[] = response.json();
+          //console.log(recipes);
           for(let recipe of recipes) {
                 if (!recipe['ingredients']){
                   recipe['ingredients']=[];
